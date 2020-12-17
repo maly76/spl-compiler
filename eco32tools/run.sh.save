@@ -1,0 +1,3 @@
+#!/bin/sh
+BIN=.
+xvfb-run -a $BIN/sim -x -l $1.bin -s 1 -t 0

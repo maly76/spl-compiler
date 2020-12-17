@@ -7,7 +7,7 @@ import de.thm.mni.compilerbau.table.Identifier;
 import de.thm.mni.compilerbau.utils.SplError;
 
 parser code {:
-  public void syntax_error(Symbol currentToken) {
+  public void syntax_error(Symbol currentToken){
     throw SplError.SyntaxError(new Position(currentToken.left, currentToken.right));
   }
 :}
@@ -24,8 +24,129 @@ terminal Identifier IDENT;    //Identifiers
 terminal Integer INTLIT;      //Integer literals
 
 non terminal Program program;
+non terminal List<GlobalDeclaration> glob_dec_list;
+non terminal GlobalDeclaration glob_dec;
+non terminal List<VariableDeclaration> var_dec_list;
+non terminal List<VariableDeclaration> non_empty_var_dec_list;
+
+non terminal IntLiteral intlit;
+
+non terminal TypeExpression type;
+non terminal TypeExpression nametypeexpression;
+
+non terminal TypeDeclaration gvar_dec;
+non terminal ProcedureDeclaration proc_dec;
+
+non terminal List<ParameterDeclaration> par_dec_list;
+non terminal List<ParameterDeclaration> non_empty_par_dec_list;
+
+non terminal ParameterDeclaration par_dec;
+
+non terminal AssignStatement asgn_dec;
+
+non terminal Variable var;
+non terminal VariableDeclaration var_dec;
+non terminal CompoundStatement comp_stm;
+non terminal List<Statement> stm_list;
+
+non terminal Statement stm;
+
+non terminal BinaryExpression.Operator com_operator;
+non terminal Expression exp;
+
+non terminal Expression add_exp;
+non terminal Expression mul_exp;
+non terminal Expression unary_exp;
+non terminal Expression primary_exp;
+
+non terminal IfStatement if_stm;
+non terminal CallStatement call_stm;
+
+non terminal WhileStatement while_stm;
+
+non terminal List<Expression> trans_dec_list;
+non terminal List<Expression> non_empty_trans_dec_list;
+non terminal Expression trans_dec;
 
 start with program;
+program ::= glob_dec_list: list {: RESULT = new Program(new Position(listleft, listright), list);:} ;
+glob_dec_list ::= /* empty */{: RESULT = List.nil() ;:}| glob_dec: gdec glob_dec_list: gdeclist {: RESULT = List.cons(gdec, gdeclist);:};
+glob_dec ::=  gvar_dec:gvar_d {:RESULT = gvar_d;:} | proc_dec: proc_d {:RESULT = proc_d;:};
 
-program ::= INTLIT; //TODO (assignment 2 and 3): Just a dummy, needs to be replaced by the actual spl grammar.
+type ::= ARRAY:a LBRACK INTLIT:intlit RBRACK OF type:t
+{: RESULT = new ArrayTypeExpression(new Position(aleft, aright), t, intlit);:} |
+IDENT:iden {:RESULT = new NamedTypeExpression(new Position(idenleft,idenright), iden);:};
 
+gvar_dec ::= TYPE:t IDENT:i EQ type:typ SEMIC
+{:RESULT = new TypeDeclaration(new Position(tleft, tright), i, typ);:};
+
+proc_dec ::= PROC IDENT:i LPAREN par_dec_list: par_dlist RPAREN LCURL var_dec_list: var_list stm_list: stmlist RCURL   //ProcedureDeclaration
+{:RESULT = new ProcedureDeclaration(new Position(ileft, iright), i, par_dlist, var_list, stmlist);:}; // bearbeiten!!!
+
+par_dec_list ::=  /* empty */ {:RESULT = List.nil();:} | non_empty_par_dec_list:nep {:RESULT = nep;:};
+non_empty_par_dec_list	::= par_dec: par_decd {:RESULT = List.cons(par_decd, List.nil());:} |
+par_dec: par_decd COMMA non_empty_par_dec_list: par_list {:RESULT = List.cons(par_decd, par_list);:};
+
+
+par_dec ::= IDENT:i COLON type:ty {:RESULT = new ParameterDeclaration(new Position(ileft, iright), i, ty, false);:}|
+ REF IDENT:i COLON type:ty {:RESULT = new ParameterDeclaration(new Position(ileft, iright), i, ty, true);:};
+
+asgn_dec ::= var: v ASGN exp: ex SEMIC {:RESULT = new AssignStatement(new Position(vleft, vright), v, ex);:};
+
+var ::= IDENT: i {:RESULT = new NamedVariable(new Position(ileft, iright), i);:} |
+        var:v LBRACK exp:e RBRACK {:RESULT = new ArrayAccess(new Position(vleft, vright), v, e);:};
+
+intlit ::= INTLIT: i {:RESULT = new IntLiteral(new Position(ileft, iright), i);:};
+
+var_dec ::= VAR IDENT: i COLON type: ty SEMIC {:RESULT = new VariableDeclaration(new Position(ileft, iright), i, ty);:};
+
+var_dec_list ::= /*empty*/ {:RESULT = List.nil();:} | non_empty_var_dec_list:VDL {:RESULT = VDL;:};
+non_empty_var_dec_list ::= var_dec:var {:RESULT = List.cons(var, List.nil());:} |
+var_dec:VD non_empty_var_dec_list:VDL {:RESULT = List.cons(VD, VDL);:};
+
+comp_stm ::= stm: stm_d stm_list: stm_list
+             {:RESULT = new CompoundStatement(new Position(stm_dleft, stm_dright), stm_list);:};
+
+stm_list ::= /* empty */ {:RESULT = List.nil();:}| stm: stm_d stm_list: stm_list
+             {:RESULT = List.cons(stm_d, stm_list);:};
+
+stm  ::= asgn_dec: AD {:RESULT = AD;:}| if_stm: IS {:RESULT = IS;:} | call_stm: CS {:RESULT = CS;:} |
+while_stm: WS {:RESULT = WS;:} | LCURL comp_stm: S RCURL {:RESULT = S;:} |
+SEMIC: i {:RESULT = new EmptyStatement(new Position(ileft, iright));:};
+
+com_operator ::= LT {:RESULT = BinaryExpression.Operator.LST;:} | LE {:RESULT = BinaryExpression.Operator.LSE;:} |
+GT {:RESULT = BinaryExpression.Operator.GRT;:} | GE {:RESULT = BinaryExpression.Operator.GRE;:} |
+NE {:RESULT = BinaryExpression.Operator.NEQ;:} | EQ {:RESULT = BinaryExpression.Operator.EQU;:};
+
+exp ::= add_exp: i {:RESULT = i;:} |
+add_exp:LO com_operator:O add_exp:RO {:RESULT = new BinaryExpression(new Position(LOleft, LOright), O, LO, RO);:};
+
+add_exp	::= mul_exp:ME {:RESULT = ME;:} | add_exp:LO PLUS mul_exp:RO {:RESULT = new BinaryExpression(new Position(LOleft, LOright), BinaryExpression.Operator.ADD, LO, RO);:} |
+            add_exp:LO MINUS mul_exp:RO {:RESULT = new BinaryExpression(new Position(LOleft, LOright), BinaryExpression.Operator.SUB, LO, RO);:};
+mul_exp ::= unary_exp:UE {:RESULT = UE;:} | mul_exp:LO STAR unary_exp:RO {:RESULT = new BinaryExpression(new Position(LOleft, LOright), BinaryExpression.Operator.MUL, LO, RO);:} |
+            mul_exp:LO SLASH unary_exp:RO {:RESULT = new BinaryExpression(new Position(LOleft, LOright), BinaryExpression.Operator.DIV, LO, RO);:};
+unary_exp ::= primary_exp:PE {:RESULT = PE;:} | PLUS unary_exp| MINUS unary_exp;
+primary_exp ::=  LPAREN exp:i RPAREN {:RESULT = i;:} | intlit: i {:RESULT = i;:} |
+var: i {:RESULT = new VariableExpression(new Position(ileft, iright), i);:};
+
+/*arg_list ::= *//* empty *//* {:RESULT = List.nil();:} | non_empty_arg_list: neAL {:RESULT = neAL;:};
+non_empty_arg_list ::= exp: ex {:RESULT = List.cons(ex, List.nil());:} | exp: ex COMMA non_empty_arg_list: neAL {:RESULT = List.cons(ex, neAL);:} |
+IDENT LPAREN arg_list: i RPAREN {:RESULT = i;:};*/
+
+if_stm ::= IF:i LPAREN exp:cond RPAREN stm:stm_listd
+{:RESULT = new IfStatement(new Position(ileft, iright), cond, stm_listd, new EmptyStatement(new Position(ileft, iright)));:} |
+IF:i LPAREN exp:cond RPAREN stm:stm_listd ELSE stm:elsepart
+{:RESULT = new IfStatement(new Position(ileft, iright), cond, stm_listd, elsepart);:};
+
+call_stm ::= IDENT: i LPAREN trans_dec_list: arg_list RPAREN SEMIC
+{:RESULT = new CallStatement(new Position(ileft, iright), i, arg_list);:};
+
+while_stm ::= WHILE:w LPAREN exp:con RPAREN stm:stm_list
+{:RESULT = new WhileStatement(new Position(wleft, wright), con, stm_list);:} ;
+
+trans_dec_list ::=  /* empty */ {:RESULT = List.nil();:} | non_empty_trans_dec_list: TL {:RESULT = TL;:};
+non_empty_trans_dec_list ::= trans_dec: TD {:RESULT = List.cons(TD, List.nil());:} |
+trans_dec: TD COMMA non_empty_trans_dec_list: TDL {:RESULT = TDL;:} |
+IDENT LPAREN non_empty_trans_dec_list: i RPAREN {:RESULT = i;:};
+
+trans_dec ::= exp: ex {:RESULT = ex;:};
