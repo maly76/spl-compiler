@@ -16,16 +16,21 @@ import java.util.Map;
  */
 public class BinaryExpression extends Expression {
     public enum Operator {
-        ADD, // +
-        SUB, // -
-        MUL, // *
-        DIV, // /
-        EQU, // =
-        NEQ, // #
-        LST, // <
-        LSE, // <=
-        GRT, // >
-        GRE; // >=
+        ADD(true), // +
+        SUB(true), // -
+        MUL(true), // *
+        DIV(true), // /
+        EQU(false), // =
+        NEQ(false), // #
+        LST(false), // <
+        LSE(false), // <=
+        GRT(false), // >
+        GRE(false); // >=
+
+        private final boolean isArithmetic;
+        Operator(final boolean _isArithmetic) {
+            isArithmetic = _isArithmetic;
+        }
 
         /**
          * Checks whether the operator is an arithmetic operator.
@@ -33,7 +38,7 @@ public class BinaryExpression extends Expression {
          * @return true if the operator is an arithmetic operator.
          */
         public boolean isArithmetic() {
-            throw new NotImplemented();     //TODO: Implement yourself if you need this
+            return isArithmetic;
         }
 
         /**
@@ -42,7 +47,7 @@ public class BinaryExpression extends Expression {
          * @return true if the operator is a comparison operator.
          */
         public boolean isComparison() {
-            throw new NotImplemented();     //TODO: Implement yourself if you need this
+            return !isArithmetic;
         }
 
         /**

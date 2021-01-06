@@ -7,10 +7,10 @@ proc main() {
   var x: int;
   var y: int;
 
-  readi(x);
-  //x := 3;
-  readi(y);
-  //y := 5;
+  //readi(x);
+  x := 3;
+  //readi(y);
+  y := 5;
   printi(x + y);
   printc('\n');
 }

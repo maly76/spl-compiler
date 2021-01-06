@@ -1,6 +1,7 @@
 package de.thm.mni.compilerbau.absyn.visitor;
 
 import de.thm.mni.compilerbau.absyn.*;
+import de.thm.mni.compilerbau.table.Entry;
 
 /**
  * This interface is used to implement the visitor pattern.

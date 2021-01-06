@@ -23,23 +23,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.vbmacher</groupId>
-                <artifactId>cup-maven-plugin</artifactId>
-                <version>11b-20160615</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <className>MyParserClassName</className>
-                    <symbolsName>MySymbolsClassName</symbolsName>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>

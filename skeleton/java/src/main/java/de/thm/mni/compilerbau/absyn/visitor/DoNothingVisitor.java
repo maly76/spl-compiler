@@ -9,7 +9,9 @@ import de.thm.mni.compilerbau.absyn.*;
  * If for example a visitor would only need a visit-method for the {@link Program}-node, the java code would not compile
  * until every other method is implemented. When the {@link DoNothingVisitor} is extended in this case, all other methods
  * are implemented in this superclass and thus no compile-errors are produced.
- */
+ **/
+
+
 public class DoNothingVisitor implements Visitor {
     @Override
     public void visit(ArrayAccess arrayAccess) {

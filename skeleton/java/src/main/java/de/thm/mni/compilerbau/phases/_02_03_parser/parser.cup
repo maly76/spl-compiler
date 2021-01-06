@@ -93,7 +93,7 @@ stm  ::= asgn_dec: ad {:RESULT = ad;:}|
          if_stm: is {:RESULT = is;:} |
          call_stm: cs {:RESULT = cs;:} | //funtkionstatement
          while_stm: ws {:RESULT = ws;:} |
-         LCURL stm_list: s RCURL {:RESULT = new CompoundStatement(new Position(sleft, sright), s);:} | //hier hab ich änderung
+         LCURL stm_list: s RCURL {:RESULT = new CompoundStatement(new Position(sleft, sright), s);:} |
          SEMIC: se {:RESULT = new EmptyStatement(new Position(seleft, seright));:};
 
 asgn_dec ::= var: v ASGN add_exp: exp SEMIC{:RESULT = new AssignStatement(new Position(vleft, vright), v, exp);:};
@@ -126,7 +126,7 @@ mul_exp ::= unary_exp:ue {:RESULT = ue;:} |
             mul_exp:lo STAR unary_exp:ro {:RESULT = new BinaryExpression(new Position(loleft, loright), BinaryExpression.Operator.MUL, lo, ro);:} |
             mul_exp:lo SLASH unary_exp:ro {:RESULT = new BinaryExpression(new Position(loleft, loright), BinaryExpression.Operator.DIV, lo, ro);:};
 unary_exp ::= primary_exp:pe {:RESULT = pe;:} |
-              MINUS unary_exp:u {:RESULT = u;:};
+              MINUS unary_exp:u {:RESULT = new BinaryExpression(new Position(uleft, uright), BinaryExpression.Operator.SUB, new IntLiteral(new Position(uleft, uright),0), u);:};
 primary_exp ::=  LPAREN add_exp:i RPAREN {:RESULT = i;:} |
                  intlit: i {:RESULT = i;:} |
                  var: i {:RESULT = new VariableExpression(new Position(ileft, iright), i);:};

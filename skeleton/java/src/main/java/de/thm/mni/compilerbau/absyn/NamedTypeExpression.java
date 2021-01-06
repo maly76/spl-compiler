@@ -1,6 +1,7 @@
 package de.thm.mni.compilerbau.absyn;
 
 import de.thm.mni.compilerbau.absyn.visitor.Visitor;
+import de.thm.mni.compilerbau.table.Entry;
 import de.thm.mni.compilerbau.table.Identifier;
 
 /**

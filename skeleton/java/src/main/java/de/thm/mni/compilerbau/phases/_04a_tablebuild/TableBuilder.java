@@ -2,6 +2,8 @@ package de.thm.mni.compilerbau.phases._04a_tablebuild;
 
 import de.thm.mni.compilerbau.absyn.*;
 import de.thm.mni.compilerbau.absyn.visitor.DoNothingVisitor;
+import de.thm.mni.compilerbau.absyn.visitor.TableBuilderVisitor;
+import de.thm.mni.compilerbau.absyn.visitor.Visitor;
 import de.thm.mni.compilerbau.table.*;
 import de.thm.mni.compilerbau.types.ArrayType;
 import de.thm.mni.compilerbau.types.Type;
@@ -26,9 +28,13 @@ public class TableBuilder {
         this.showTables = showTables;
     }
 
+
     public SymbolTable buildSymbolTable(Program program) {
         //TODO (assignment 4a): Initialize a symbol table with all predefined symbols and fill it with user-defined symbols
-
-        throw new NotImplemented();
+        TableBuilderVisitor visitor = new TableBuilderVisitor();
+        SymbolTable table = TableInitializer.initializeGlobalTable();
+        visitor.setTable(table);
+        program.accept(visitor);
+        return visitor.getTable();
     }
 }
