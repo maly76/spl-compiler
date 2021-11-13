@@ -1,0 +1,301 @@
+[2021-02-20 12:15:23.433061] Start of evaluation log for submission '51510686-08cb-438b-91e3-ed4df3d82200'.
+[2021-02-20 12:15:23.433161] Team member: ('Alayoub', 'Mohammad', '5275160')
+[2021-02-20 12:15:23.433272] Team member: ('Grabiec', 'Marco', '5273214')
+[2021-02-20 12:15:23.448444] Preparing the sandbox
+[2021-02-20 12:15:24.216716] Unpacking submission in sandbox
+[2021-02-20 12:15:24.654877] Building the test subject
+[2021-02-20 12:15:24.655005] Identified the Java variant.
+[2021-02-20 12:15:24.791272] Building Java solution with maven.
+[2021-02-20 12:15:35.758122] Maven log:
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< de.thm.mni.compilerbau.spl-reference:spl >--------------
+[INFO] Building spl 0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jflex-maven-plugin:1.7.0:generate (default) @ spl ---
+[INFO]   generated /home/solution/java/target/generated-sources/jflex/de/thm/mni/compilerbau/phases/_01_scanner/Scanner.java
+[INFO] 
+[INFO] --- cup-maven-plugin:11b-20160615:generate (default) @ spl ---
+Warning : *** Shift/Reduce conflict found in state #83
+  between if_stm ::= IF LPAREN exp RPAREN stm (*) 
+  and     if_stm ::= IF LPAREN exp RPAREN stm (*) ELSE stm 
+  under symbol ELSE
+  Resolved in favor of shifting.
+
+[INFO]   generated /home/solution/java/target/generated-sources/cup/de/thm/mni/compilerbau/phases/_02_03_parser/Parser.java
+[INFO]   generated /home/solution/java/target/generated-sources/cup/de/thm/mni/compilerbau/phases/_02_03_parser/Sym.java
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/solution/java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ spl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 55 source files to /home/solution/java/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/solution/java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ spl ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ spl ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ spl ---
+[INFO] Building jar: /home/solution/java/target/spl.jar
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ spl ---
+[INFO] Including com.github.vbmacher:java-cup-runtime:jar:11b-20160615 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /home/solution/java/target/spl.jar with /home/solution/java/target/spl-0.1-shaded.jar
+[INFO] Dependency-reduced POM written at: /home/solution/java/dependency-reduced-pom.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.861 s
+[INFO] Finished at: 2021-02-20T11:15:35Z
+[INFO] ------------------------------------------------------------------------
+[2021-02-20 12:15:35.913464] Beginning evaluation.
+[2021-02-20 12:15:35.913721] Evaluating 101_undefined_type.spl with the submitted solution.
+[2021-02-20 12:15:36.270008] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:36.270035] Exit code matches the expected exit code (101).
+[2021-02-20 12:15:36.270059] Test passed.
+[2021-02-20 12:15:36.270068] Running Score: 1/1
+
+[2021-02-20 12:15:36.270083] Evaluating 102_not_a_type.spl with the submitted solution.
+[2021-02-20 12:15:36.581337] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:36.581356] Exit code matches the expected exit code (102).
+[2021-02-20 12:15:36.581383] Test passed.
+[2021-02-20 12:15:36.581392] Running Score: 2/2
+
+[2021-02-20 12:15:36.581405] Evaluating 103_redeclaration_as_type.spl with the submitted solution.
+[2021-02-20 12:15:36.893070] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:36.893088] Exit code matches the expected exit code (103).
+[2021-02-20 12:15:36.893111] Test passed.
+[2021-02-20 12:15:36.893121] Running Score: 3/3
+
+[2021-02-20 12:15:36.893134] Evaluating 104_must_be_reference_parameter.spl with the submitted solution.
+[2021-02-20 12:15:38.328491] Results do not match. Expected Compiler Failure(104), but got Success(0).
+[2021-02-20 12:15:38.328770] Output (stdout) of 'xvfb-run -a /home/tools/sim -x -l /home/temp/104_must_be_reference_parameter.spl.bin -s 1 -t 0' (Limited to 50 lines/10000 characters):
+SPL/RTS: main() started
+
+SPL/RTS: main() finished
+[2021-02-20 12:15:38.328819] Test not passed.
+[2021-02-20 12:15:38.328828] Running Score: 3/4
+
+[2021-02-20 12:15:38.328844] Evaluating 105_redeclaration_as_procedure.spl with the submitted solution.
+[2021-02-20 12:15:38.633399] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:38.633423] Exit code matches the expected exit code (105).
+[2021-02-20 12:15:38.633445] Test passed.
+[2021-02-20 12:15:38.633454] Running Score: 4/5
+
+[2021-02-20 12:15:38.633467] Evaluating 106_redeclaration_as_parameter.spl with the submitted solution.
+[2021-02-20 12:15:38.935846] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:38.935869] Exit code matches the expected exit code (106).
+[2021-02-20 12:15:38.935895] Test passed.
+[2021-02-20 12:15:38.935904] Running Score: 5/6
+
+[2021-02-20 12:15:38.935917] Evaluating 107_redeclaration_as_variable.spl with the submitted solution.
+[2021-02-20 12:15:39.251035] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:39.251057] Exit code matches the expected exit code (107).
+[2021-02-20 12:15:39.251084] Test passed.
+[2021-02-20 12:15:39.251095] Running Score: 6/7
+
+[2021-02-20 12:15:39.251108] Evaluating 112_undefined_procedure.spl with the submitted solution.
+[2021-02-20 12:15:39.570658] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:39.570679] Exit code matches the expected exit code (112).
+[2021-02-20 12:15:39.570703] Test passed.
+[2021-02-20 12:15:39.570711] Running Score: 7/8
+
+[2021-02-20 12:15:39.570724] Evaluating 113_call_of_non_procedure.spl with the submitted solution.
+[2021-02-20 12:15:39.910226] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:39.910249] Exit code matches the expected exit code (113).
+[2021-02-20 12:15:39.910273] Test passed.
+[2021-02-20 12:15:39.910284] Running Score: 8/9
+
+[2021-02-20 12:15:39.910309] Evaluating 114_argument_type_mismatch.spl with the submitted solution.
+[2021-02-20 12:15:40.232399] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:40.232423] Exit code matches the expected exit code (114).
+[2021-02-20 12:15:40.232449] Test passed.
+[2021-02-20 12:15:40.232458] Running Score: 9/10
+
+[2021-02-20 12:15:40.232473] Evaluating 115_argument_must_be_variable.spl with the submitted solution.
+[2021-02-20 12:15:40.547080] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:40.547102] Exit code matches the expected exit code (115).
+[2021-02-20 12:15:40.547130] Test passed.
+[2021-02-20 12:15:40.547138] Running Score: 10/11
+
+[2021-02-20 12:15:40.547152] Evaluating 116_procedure_too_few_arguments.spl with the submitted solution.
+[2021-02-20 12:15:40.867661] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:40.867684] Exit code matches the expected exit code (116).
+[2021-02-20 12:15:40.867709] Test passed.
+[2021-02-20 12:15:40.867718] Running Score: 11/12
+
+[2021-02-20 12:15:40.867733] Evaluating 117_procedure_too_many_arguments.spl with the submitted solution.
+[2021-02-20 12:15:41.178397] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:41.178420] Exit code matches the expected exit code (117).
+[2021-02-20 12:15:41.178446] Test passed.
+[2021-02-20 12:15:41.178455] Running Score: 12/13
+
+[2021-02-20 12:15:41.178470] Evaluating 121_undefined_variable.spl with the submitted solution.
+[2021-02-20 12:15:41.482273] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:41.482295] Exit code matches the expected exit code (121).
+[2021-02-20 12:15:41.482318] Test passed.
+[2021-02-20 12:15:41.482327] Running Score: 13/14
+
+[2021-02-20 12:15:41.482342] Evaluating 122_not_a_variable.spl with the submitted solution.
+[2021-02-20 12:15:41.805434] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:41.805455] Exit code matches the expected exit code (122).
+[2021-02-20 12:15:41.805480] Test passed.
+[2021-02-20 12:15:41.805488] Running Score: 14/15
+
+[2021-02-20 12:15:41.805503] Evaluating 123_indexing_non_array.spl with the submitted solution.
+[2021-02-20 12:15:42.122157] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:42.122181] Exit code matches the expected exit code (123).
+[2021-02-20 12:15:42.122207] Test passed.
+[2021-02-20 12:15:42.122218] Running Score: 15/16
+
+[2021-02-20 12:15:42.122233] Evaluating 124_indexing_with_non_integer.spl with the submitted solution.
+[2021-02-20 12:15:42.438153] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:42.438177] Exit code matches the expected exit code (124).
+[2021-02-20 12:15:42.438216] Test passed.
+[2021-02-20 12:15:42.438226] Running Score: 16/17
+
+[2021-02-20 12:15:42.438242] Evaluating 126_main_not_a_procedure.spl with the submitted solution.
+[2021-02-20 12:15:42.773025] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:42.773050] Exit code matches the expected exit code (126).
+[2021-02-20 12:15:42.773077] Test passed.
+[2021-02-20 12:15:42.773085] Running Score: 17/18
+
+[2021-02-20 12:15:42.773100] Evaluating 127_main_must_not_have_parameters.spl with the submitted solution.
+[2021-02-20 12:15:43.081342] Test subject results match (Compiler Failure).
+[2021-02-20 12:15:43.081366] Exit code matches the expected exit code (127).
+[2021-02-20 12:15:43.081391] Test passed.
+[2021-02-20 12:15:43.081401] Running Score: 18/19
+
+[2021-02-20 12:15:43.081417] Evaluating acker.spl with the submitted solution.
+[2021-02-20 12:15:46.043754] Test subject results match (Success).
+[2021-02-20 12:15:46.057244] Outputs match.
+[2021-02-20 12:15:46.057436] Test passed.
+[2021-02-20 12:15:46.057527] Running Score: 19/20
+
+[2021-02-20 12:15:46.057693] Evaluating bigtest.spl with the submitted solution.
+[2021-02-20 12:15:47.634699] Test subject results match (Success).
+[2021-02-20 12:15:47.642988] Outputs match.
+[2021-02-20 12:15:47.643048] Test passed.
+[2021-02-20 12:15:47.643060] Running Score: 20/21
+
+[2021-02-20 12:15:47.643086] Evaluating bits.spl with the submitted solution.
+[2021-02-20 12:15:48.953045] Test subject results match (Success).
+[2021-02-20 12:15:48.962306] Outputs match.
+[2021-02-20 12:15:48.962366] Test passed.
+[2021-02-20 12:15:48.962376] Running Score: 21/22
+
+[2021-02-20 12:15:48.962399] Evaluating gcd.spl with the submitted solution.
+[2021-02-20 12:15:50.180653] Test subject results match (Success).
+[2021-02-20 12:15:50.196264] Outputs match.
+[2021-02-20 12:15:50.196427] Test passed.
+[2021-02-20 12:15:50.196514] Running Score: 22/23
+
+[2021-02-20 12:15:50.196678] Evaluating inttest.spl with the submitted solution.
+[2021-02-20 12:15:51.437663] Test subject results match (Success).
+[2021-02-20 12:15:51.447164] Outputs match.
+[2021-02-20 12:15:51.447226] Test passed.
+[2021-02-20 12:15:51.447236] Running Score: 23/24
+
+[2021-02-20 12:15:51.447257] Evaluating multiply.spl with the submitted solution.
+[2021-02-20 12:15:53.045259] Test subject results match (Success).
+[2021-02-20 12:15:53.054464] Outputs match.
+[2021-02-20 12:15:53.054527] Test passed.
+[2021-02-20 12:15:53.054538] Running Score: 24/25
+
+[2021-02-20 12:15:53.054557] Evaluating partind1.spl with the submitted solution.
+[2021-02-20 12:15:54.360893] Test subject results match (Success).
+[2021-02-20 12:15:54.370189] Outputs match.
+[2021-02-20 12:15:54.370249] Test passed.
+[2021-02-20 12:15:54.370260] Running Score: 25/26
+
+[2021-02-20 12:15:54.370281] Evaluating partind2.spl with the submitted solution.
+[2021-02-20 12:15:55.901652] Test subject results match (Success).
+[2021-02-20 12:15:55.911269] Outputs match.
+[2021-02-20 12:15:55.911330] Test passed.
+[2021-02-20 12:15:55.911340] Running Score: 26/27
+
+[2021-02-20 12:15:55.911361] Evaluating swap.spl with the submitted solution.
+[2021-02-20 12:15:57.127192] Test subject results match (Success).
+[2021-02-20 12:15:57.136431] Outputs match.
+[2021-02-20 12:15:57.136494] Test passed.
+[2021-02-20 12:15:57.136504] Running Score: 27/28
+
+[2021-02-20 12:15:57.136527] Evaluating test1.spl with the submitted solution.
+[2021-02-20 12:15:58.345398] Test subject results match (Success).
+[2021-02-20 12:15:58.354908] Outputs match.
+[2021-02-20 12:15:58.354970] Test passed.
+[2021-02-20 12:15:58.354979] Running Score: 28/29
+
+[2021-02-20 12:15:58.355001] Evaluating test2.spl with the submitted solution.
+[2021-02-20 12:15:59.537302] Test subject results match (Success).
+[2021-02-20 12:15:59.547285] Outputs match.
+[2021-02-20 12:15:59.547347] Test passed.
+[2021-02-20 12:15:59.547356] Running Score: 29/30
+
+[2021-02-20 12:15:59.547424] Evaluating test3.spl with the submitted solution.
+[2021-02-20 12:16:00.937991] Test subject results match (Success).
+[2021-02-20 12:16:00.947618] Outputs match.
+[2021-02-20 12:16:00.947696] Test passed.
+[2021-02-20 12:16:00.947706] Running Score: 30/31
+
+[2021-02-20 12:16:00.947726] Evaluating test4.spl with the submitted solution.
+[2021-02-20 12:16:02.223186] Test subject results match (Success).
+[2021-02-20 12:16:02.232878] Outputs match.
+[2021-02-20 12:16:02.232941] Test passed.
+[2021-02-20 12:16:02.232951] Running Score: 31/32
+
+[2021-02-20 12:16:02.232973] Evaluating test5.spl with the submitted solution.
+[2021-02-20 12:16:03.449735] Test subject results match (Success).
+[2021-02-20 12:16:03.459476] Outputs match.
+[2021-02-20 12:16:03.459545] Test passed.
+[2021-02-20 12:16:03.459555] Running Score: 32/33
+
+[2021-02-20 12:16:03.459576] Evaluating test7.spl with the submitted solution.
+[2021-02-20 12:16:04.665453] Test subject results match (Success).
+[2021-02-20 12:16:04.673533] Outputs match.
+[2021-02-20 12:16:04.673598] Test passed.
+[2021-02-20 12:16:04.673608] Running Score: 33/34
+
+[2021-02-20 12:16:04.673628] Evaluating test8.spl with the submitted solution.
+[2021-02-20 12:16:05.887873] Test subject results match (Success).
+[2021-02-20 12:16:05.896917] Outputs match.
+[2021-02-20 12:16:05.896979] Test passed.
+[2021-02-20 12:16:05.896989] Running Score: 34/35
+
+[2021-02-20 12:16:05.897010] Evaluating test9.spl with the submitted solution.
+[2021-02-20 12:16:07.111695] Test subject results match (Success).
+[2021-02-20 12:16:07.121641] Outputs match.
+[2021-02-20 12:16:07.121700] Test passed.
+[2021-02-20 12:16:07.121711] Running Score: 35/36
+
+[2021-02-20 12:16:07.121730] Evaluating threedim.spl with the submitted solution.
+[2021-02-20 12:16:08.559894] Test subject results match (Success).
+[2021-02-20 12:16:08.571861] Outputs match.
+[2021-02-20 12:16:08.571926] Test passed.
+[2021-02-20 12:16:08.571936] Running Score: 36/37
+
+[2021-02-20 12:16:08.571958] Evaluating twodim.spl with the submitted solution.
+[2021-02-20 12:16:09.840617] Test subject results match (Success).
+[2021-02-20 12:16:09.850405] Outputs match.
+[2021-02-20 12:16:09.850470] Test passed.
+[2021-02-20 12:16:09.850480] Running Score: 37/38
+
+[2021-02-20 12:16:09.850583] Final score: 37/38 (97%). 
+[2021-02-20 12:16:09.850607] 80% are needed to pass.
+[2021-02-20 12:16:10.069906] You have PASSED this assignment.
+

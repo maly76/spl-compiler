@@ -1,0 +1,25 @@
+proc p(){
+var i: int;
+var j: int;
+i := 5;
+if(i = 5){
+    if(i = 4){
+        j := 4;
+    }
+    else{
+        j := 1;
+    }
+} else {
+        j := 4;
+    }
+
+   while(i < 4){
+        while(i < 5){
+            i := i + 1;
+        }
+   }
+}
+
+proc main(){
+p();
+}

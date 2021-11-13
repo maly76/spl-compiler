@@ -1,0 +1,376 @@
+[2021-02-19 21:13:35.244556] Start of evaluation log for submission '695cb387-72a8-45af-bc53-27820a8f0319'.
+[2021-02-19 21:13:35.244643] Team member: ('Alayoub', 'Mohammad', '5275160')
+[2021-02-19 21:13:35.244729] Team member: ('Grabiec', 'Marco', '5273214')
+[2021-02-19 21:13:35.255733] Preparing the sandbox
+[2021-02-19 21:13:36.009598] Unpacking submission in sandbox
+[2021-02-19 21:13:36.441801] Building the test subject
+[2021-02-19 21:13:36.441938] Identified the Java variant.
+[2021-02-19 21:13:36.579138] Building Java solution with maven.
+[2021-02-19 21:13:47.985070] Maven log:
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< de.thm.mni.compilerbau.spl-reference:spl >--------------
+[INFO] Building spl 0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jflex-maven-plugin:1.7.0:generate (default) @ spl ---
+[INFO]   generated /home/solution/java/target/generated-sources/jflex/de/thm/mni/compilerbau/phases/_01_scanner/Scanner.java
+[INFO] 
+[INFO] --- cup-maven-plugin:11b-20160615:generate (default) @ spl ---
+Warning : *** Shift/Reduce conflict found in state #83
+  between if_stm ::= IF LPAREN exp RPAREN stm (*) 
+  and     if_stm ::= IF LPAREN exp RPAREN stm (*) ELSE stm 
+  under symbol ELSE
+  Resolved in favor of shifting.
+
+[INFO]   generated /home/solution/java/target/generated-sources/cup/de/thm/mni/compilerbau/phases/_02_03_parser/Parser.java
+[INFO]   generated /home/solution/java/target/generated-sources/cup/de/thm/mni/compilerbau/phases/_02_03_parser/Sym.java
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/solution/java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ spl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 55 source files to /home/solution/java/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/solution/java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ spl ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ spl ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ spl ---
+[INFO] Building jar: /home/solution/java/target/spl.jar
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ spl ---
+[INFO] Including com.github.vbmacher:java-cup-runtime:jar:11b-20160615 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /home/solution/java/target/spl.jar with /home/solution/java/target/spl-0.1-shaded.jar
+[INFO] Dependency-reduced POM written at: /home/solution/java/dependency-reduced-pom.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.301 s
+[INFO] Finished at: 2021-02-19T20:13:47Z
+[INFO] ------------------------------------------------------------------------
+[2021-02-19 21:13:48.138225] Beginning evaluation.
+[2021-02-19 21:13:48.138479] Evaluating 101_undefined_type.spl with the submitted solution.
+[2021-02-19 21:13:48.491552] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:48.491582] Exit code matches the expected exit code (101).
+[2021-02-19 21:13:48.491619] Test passed.
+[2021-02-19 21:13:48.491629] Running Score: 1/1
+
+[2021-02-19 21:13:48.491645] Evaluating 102_not_a_type.spl with the submitted solution.
+[2021-02-19 21:13:48.805167] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:48.805191] Exit code matches the expected exit code (102).
+[2021-02-19 21:13:48.805215] Test passed.
+[2021-02-19 21:13:48.805224] Running Score: 2/2
+
+[2021-02-19 21:13:48.805240] Evaluating 103_redeclaration_as_type.spl with the submitted solution.
+[2021-02-19 21:13:49.115530] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:49.115556] Exit code matches the expected exit code (103).
+[2021-02-19 21:13:49.115579] Test passed.
+[2021-02-19 21:13:49.115588] Running Score: 3/3
+
+[2021-02-19 21:13:49.115603] Evaluating 104_must_be_reference_parameter.spl with the submitted solution.
+[2021-02-19 21:13:49.786647] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:49.786716] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/104_must_be_reference_parameter.spl.x /home/tools/lib/start.o /home/temp/104_must_be_reference_parameter.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:13:49.786740] Test not passed.
+[2021-02-19 21:13:49.786748] Running Score: 3/4
+
+[2021-02-19 21:13:49.786764] Evaluating 105_redeclaration_as_procedure.spl with the submitted solution.
+[2021-02-19 21:13:50.092822] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:50.092853] Exit code matches the expected exit code (105).
+[2021-02-19 21:13:50.092877] Test passed.
+[2021-02-19 21:13:50.092886] Running Score: 4/5
+
+[2021-02-19 21:13:50.092902] Evaluating 106_redeclaration_as_parameter.spl with the submitted solution.
+[2021-02-19 21:13:50.408871] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:50.408894] Exit code matches the expected exit code (106).
+[2021-02-19 21:13:50.408920] Test passed.
+[2021-02-19 21:13:50.408929] Running Score: 5/6
+
+[2021-02-19 21:13:50.408944] Evaluating 107_redeclaration_as_variable.spl with the submitted solution.
+[2021-02-19 21:13:50.720675] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:50.720698] Exit code matches the expected exit code (107).
+[2021-02-19 21:13:50.720721] Test passed.
+[2021-02-19 21:13:50.720729] Running Score: 6/7
+
+[2021-02-19 21:13:50.720745] Evaluating 112_undefined_procedure.spl with the submitted solution.
+[2021-02-19 21:13:51.026696] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:51.026720] Exit code matches the expected exit code (112).
+[2021-02-19 21:13:51.026743] Test passed.
+[2021-02-19 21:13:51.026752] Running Score: 7/8
+
+[2021-02-19 21:13:51.026767] Evaluating 113_call_of_non_procedure.spl with the submitted solution.
+[2021-02-19 21:13:51.336568] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:51.336595] Exit code matches the expected exit code (113).
+[2021-02-19 21:13:51.336619] Test passed.
+[2021-02-19 21:13:51.336628] Running Score: 8/9
+
+[2021-02-19 21:13:51.336644] Evaluating 114_argument_type_mismatch.spl with the submitted solution.
+[2021-02-19 21:13:51.664851] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:51.664876] Exit code matches the expected exit code (114).
+[2021-02-19 21:13:51.664908] Test passed.
+[2021-02-19 21:13:51.664917] Running Score: 9/10
+
+[2021-02-19 21:13:51.664932] Evaluating 115_argument_must_be_variable.spl with the submitted solution.
+[2021-02-19 21:13:51.997032] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:51.997058] Exit code matches the expected exit code (115).
+[2021-02-19 21:13:51.997089] Test passed.
+[2021-02-19 21:13:51.997098] Running Score: 10/11
+
+[2021-02-19 21:13:51.997113] Evaluating 116_procedure_too_few_arguments.spl with the submitted solution.
+[2021-02-19 21:13:52.310373] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:52.310400] Exit code matches the expected exit code (116).
+[2021-02-19 21:13:52.310426] Test passed.
+[2021-02-19 21:13:52.310435] Running Score: 11/12
+
+[2021-02-19 21:13:52.310451] Evaluating 117_procedure_too_many_arguments.spl with the submitted solution.
+[2021-02-19 21:13:52.619721] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:52.619748] Exit code matches the expected exit code (117).
+[2021-02-19 21:13:52.619773] Test passed.
+[2021-02-19 21:13:52.619782] Running Score: 12/13
+
+[2021-02-19 21:13:52.619798] Evaluating 121_undefined_variable.spl with the submitted solution.
+[2021-02-19 21:13:52.936644] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:52.936668] Exit code matches the expected exit code (121).
+[2021-02-19 21:13:52.936693] Test passed.
+[2021-02-19 21:13:52.936701] Running Score: 13/14
+
+[2021-02-19 21:13:52.936717] Evaluating 122_not_a_variable.spl with the submitted solution.
+[2021-02-19 21:13:53.254285] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:53.254316] Exit code matches the expected exit code (122).
+[2021-02-19 21:13:53.254340] Test passed.
+[2021-02-19 21:13:53.254349] Running Score: 14/15
+
+[2021-02-19 21:13:53.254364] Evaluating 123_indexing_non_array.spl with the submitted solution.
+[2021-02-19 21:13:53.566571] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:53.566601] Exit code matches the expected exit code (123).
+[2021-02-19 21:13:53.566638] Test passed.
+[2021-02-19 21:13:53.566656] Running Score: 15/16
+
+[2021-02-19 21:13:53.566678] Evaluating 124_indexing_with_non_integer.spl with the submitted solution.
+[2021-02-19 21:13:53.882685] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:53.882707] Exit code matches the expected exit code (124).
+[2021-02-19 21:13:53.882730] Test passed.
+[2021-02-19 21:13:53.882738] Running Score: 16/17
+
+[2021-02-19 21:13:53.882754] Evaluating 126_main_not_a_procedure.spl with the submitted solution.
+[2021-02-19 21:13:54.197293] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:54.197315] Exit code matches the expected exit code (126).
+[2021-02-19 21:13:54.197339] Test passed.
+[2021-02-19 21:13:54.197349] Running Score: 17/18
+
+[2021-02-19 21:13:54.197367] Evaluating 127_main_must_not_have_parameters.spl with the submitted solution.
+[2021-02-19 21:13:54.504304] Test subject results match (Compiler Failure).
+[2021-02-19 21:13:54.504328] Exit code matches the expected exit code (127).
+[2021-02-19 21:13:54.504352] Test passed.
+[2021-02-19 21:13:54.504361] Running Score: 18/19
+
+[2021-02-19 21:13:54.504376] Evaluating acker.spl with the submitted solution.
+[2021-02-19 21:13:55.287336] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:55.287451] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/acker.spl.x /home/tools/lib/start.o /home/temp/acker.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    ackermann
+Error: 2 undefined symbol(s)
+[2021-02-19 21:13:55.287494] Test not passed.
+[2021-02-19 21:13:55.287506] Running Score: 18/20
+
+[2021-02-19 21:13:55.287527] Evaluating bigtest.spl with the submitted solution.
+[2021-02-19 21:13:56.260124] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:56.260185] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/bigtest.spl.x /home/tools/lib/start.o /home/temp/bigtest.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    callArray
+    callRecursive
+    callbyref
+    callbyval
+    check
+    manyargs
+    ausgabe
+    error
+Error: 9 undefined symbol(s)
+[2021-02-19 21:13:56.260212] Test not passed.
+[2021-02-19 21:13:56.260220] Running Score: 18/21
+
+[2021-02-19 21:13:56.260236] Evaluating bits.spl with the submitted solution.
+[2021-02-19 21:13:56.981052] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:56.981111] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/bits.spl.x /home/tools/lib/start.o /home/temp/bits.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:13:56.981140] Test not passed.
+[2021-02-19 21:13:56.981148] Running Score: 18/22
+
+[2021-02-19 21:13:56.981165] Evaluating gcd.spl with the submitted solution.
+[2021-02-19 21:13:57.702703] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:57.702766] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/gcd.spl.x /home/tools/lib/start.o /home/temp/gcd.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    gcd
+Error: 2 undefined symbol(s)
+[2021-02-19 21:13:57.702792] Test not passed.
+[2021-02-19 21:13:57.702800] Running Score: 18/23
+
+[2021-02-19 21:13:57.702816] Evaluating inttest.spl with the submitted solution.
+[2021-02-19 21:13:58.440585] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:58.440647] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/inttest.spl.x /home/tools/lib/start.o /home/temp/inttest.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:13:58.440675] Test not passed.
+[2021-02-19 21:13:58.440683] Running Score: 18/24
+
+[2021-02-19 21:13:58.440700] Evaluating multiply.spl with the submitted solution.
+[2021-02-19 21:13:59.158035] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:59.158097] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/multiply.spl.x /home/tools/lib/start.o /home/temp/multiply.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:13:59.158126] Test not passed.
+[2021-02-19 21:13:59.158133] Running Score: 18/25
+
+[2021-02-19 21:13:59.158148] Evaluating partind1.spl with the submitted solution.
+[2021-02-19 21:13:59.904883] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:13:59.904950] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/partind1.spl.x /home/tools/lib/start.o /home/temp/partind1.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    p
+Error: 2 undefined symbol(s)
+[2021-02-19 21:13:59.904979] Test not passed.
+[2021-02-19 21:13:59.904986] Running Score: 18/26
+
+[2021-02-19 21:13:59.905003] Evaluating partind2.spl with the submitted solution.
+[2021-02-19 21:14:00.755184] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:00.755255] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/partind2.spl.x /home/tools/lib/start.o /home/temp/partind2.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    p
+Error: 2 undefined symbol(s)
+[2021-02-19 21:14:00.755283] Test not passed.
+[2021-02-19 21:14:00.755290] Running Score: 18/27
+
+[2021-02-19 21:14:00.755307] Evaluating swap.spl with the submitted solution.
+[2021-02-19 21:14:01.474562] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:01.474622] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/swap.spl.x /home/tools/lib/start.o /home/temp/swap.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    swap
+Error: 2 undefined symbol(s)
+[2021-02-19 21:14:01.474648] Test not passed.
+[2021-02-19 21:14:01.474656] Running Score: 18/28
+
+[2021-02-19 21:14:01.474672] Evaluating test1.spl with the submitted solution.
+[2021-02-19 21:14:02.156706] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:02.156772] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test1.spl.x /home/tools/lib/start.o /home/temp/test1.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:02.156800] Test not passed.
+[2021-02-19 21:14:02.156809] Running Score: 18/29
+
+[2021-02-19 21:14:02.156824] Evaluating test2.spl with the submitted solution.
+[2021-02-19 21:14:02.854466] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:02.854529] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test2.spl.x /home/tools/lib/start.o /home/temp/test2.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    summe
+Error: 2 undefined symbol(s)
+[2021-02-19 21:14:02.854555] Test not passed.
+[2021-02-19 21:14:02.854563] Running Score: 18/30
+
+[2021-02-19 21:14:02.854578] Evaluating test3.spl with the submitted solution.
+[2021-02-19 21:14:03.699228] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:03.699288] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test3.spl.x /home/tools/lib/start.o /home/temp/test3.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    sort
+Error: 2 undefined symbol(s)
+[2021-02-19 21:14:03.699318] Test not passed.
+[2021-02-19 21:14:03.699325] Running Score: 18/31
+
+[2021-02-19 21:14:03.699341] Evaluating test4.spl with the submitted solution.
+[2021-02-19 21:14:04.470929] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:04.470995] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test4.spl.x /home/tools/lib/start.o /home/temp/test4.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    fak1
+    fak2
+Error: 3 undefined symbol(s)
+[2021-02-19 21:14:04.471022] Test not passed.
+[2021-02-19 21:14:04.471030] Running Score: 18/32
+
+[2021-02-19 21:14:04.471048] Evaluating test5.spl with the submitted solution.
+[2021-02-19 21:14:05.164817] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:05.164876] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test5.spl.x /home/tools/lib/start.o /home/temp/test5.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:05.164903] Test not passed.
+[2021-02-19 21:14:05.164911] Running Score: 18/33
+
+[2021-02-19 21:14:05.164927] Evaluating test7.spl with the submitted solution.
+[2021-02-19 21:14:05.852422] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:05.852483] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test7.spl.x /home/tools/lib/start.o /home/temp/test7.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:05.852513] Test not passed.
+[2021-02-19 21:14:05.852521] Running Score: 18/34
+
+[2021-02-19 21:14:05.852535] Evaluating test8.spl with the submitted solution.
+[2021-02-19 21:14:06.568512] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:06.568558] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test8.spl.x /home/tools/lib/start.o /home/temp/test8.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:06.568579] Test not passed.
+[2021-02-19 21:14:06.568586] Running Score: 18/35
+
+[2021-02-19 21:14:06.568602] Evaluating test9.spl with the submitted solution.
+[2021-02-19 21:14:07.289133] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:07.289193] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test9.spl.x /home/tools/lib/start.o /home/temp/test9.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:07.289222] Test not passed.
+[2021-02-19 21:14:07.289230] Running Score: 18/36
+
+[2021-02-19 21:14:07.289245] Evaluating threedim.spl with the submitted solution.
+[2021-02-19 21:14:08.123258] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:08.123323] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/threedim.spl.x /home/tools/lib/start.o /home/temp/threedim.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:08.123356] Test not passed.
+[2021-02-19 21:14:08.123363] Running Score: 18/37
+
+[2021-02-19 21:14:08.123397] Evaluating twodim.spl with the submitted solution.
+[2021-02-19 21:14:08.878079] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 21:14:08.878144] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/twodim.spl.x /home/tools/lib/start.o /home/temp/twodim.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 21:14:08.878171] Test not passed.
+[2021-02-19 21:14:08.878179] Running Score: 18/38
+
+[2021-02-19 21:14:08.878262] Final score: 18/38 (47%). 
+[2021-02-19 21:14:08.878285] 80% are needed to pass.
+[2021-02-19 21:14:09.080983] You have NOT PASSED this assignment.
+[2021-02-19 21:14:09.081078] You can try again. Deadline: 22.02.2021 23:59
+

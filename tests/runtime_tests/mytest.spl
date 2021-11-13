@@ -1,0 +1,29 @@
+proc main() {
+    var i: int;
+    test();
+    p(i);
+}
+
+proc test() {
+  var i: int;
+  var j: int;
+  if (3 < 5)
+   {
+        i := 5;
+        if (10 > 12)
+        {i := 7;}
+   }
+  while(i<6){
+    if (4 < 7){i := i + 1;}
+    if (5 < 8){i := i + 1;}
+  }
+  j := i + 1;
+}
+
+proc p(ref i:int){
+  var k : array [10] of int;
+  k[1+2] := 5;
+  i := i+1;
+  printi(i);
+}
+

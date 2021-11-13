@@ -1,0 +1,6 @@
+{
+    "accepted": false,
+    "immediate_evaluation": null,
+    "log": "[2021-02-13 15:14:53.719249] Received submission e1bcf737-5efa-4ea4-aa04-42e974a38972\n[2021-02-13 15:14:53.719924] Ip: 10.196.104.111\n[2021-02-13 15:14:53.720043] Team members: [('Alayoub', 'Mohammad', '5275160'), ('Grabiec', 'Marco', '5273214')]\n[2021-02-13 15:14:53.861076] Your submission was REJECTED.\n[2021-02-13 15:14:53.861260] Reason: Team member ('Grabiec', 'Marco', '5273214') has not passed prerequisite 'Aufgabe-1'.\n",
+    "submission": null
+}

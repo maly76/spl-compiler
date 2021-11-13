@@ -1,0 +1,23 @@
+{
+    "accepted": true,
+    "immediate_evaluation": true,
+    "log": "[2021-02-20 11:41:09.488187] Received submission b0be33af-2a91-443b-9ca9-aaec744b55dd\n[2021-02-20 11:41:09.488844] Ip: 10.196.105.90\n[2021-02-20 11:41:09.488984] Team members: [('Alayoub', 'Mohammad', '5275160'), ('Grabiec', 'Marco', '5273214')]\n[2021-02-20 11:41:09.717116] Your submission was ACCEPTED for course 'Compilerbau-ws20', assignment 'Aufgabe-2'.\n[2021-02-20 11:41:09.717329] Your submission has the id b0be33af-2a91-443b-9ca9-aaec744b55dd.\n[2021-02-20 11:41:09.717564] It will be evaluated shortly. Please check back soon for your results.\n",
+    "submission": {
+        "authors": [
+            {
+                "first_name": "Mohammad",
+                "last_name": "Alayoub",
+                "matriculation_number": "5275160"
+            },
+            {
+                "first_name": "Marco",
+                "last_name": "Grabiec",
+                "matriculation_number": "5273214"
+            }
+        ],
+        "evaluation_result": null,
+        "id": "b0be33af-2a91-443b-9ca9-aaec744b55dd",
+        "timestamp_ns": 1613817669486524522,
+        "upload_log": "[2021-02-20 11:41:09.488187] Received submission b0be33af-2a91-443b-9ca9-aaec744b55dd\n[2021-02-20 11:41:09.488844] Ip: 10.196.105.90\n[2021-02-20 11:41:09.488984] Team members: [('Alayoub', 'Mohammad', '5275160'), ('Grabiec', 'Marco', '5273214')]\n[2021-02-20 11:41:09.717116] Your submission was ACCEPTED for course 'Compilerbau-ws20', assignment 'Aufgabe-2'.\n[2021-02-20 11:41:09.717329] Your submission has the id b0be33af-2a91-443b-9ca9-aaec744b55dd.\n[2021-02-20 11:41:09.717564] It will be evaluated shortly. Please check back soon for your results.\n\n"
+    }
+}

@@ -1,0 +1,453 @@
+[2021-02-19 23:52:45.178241] Start of evaluation log for submission 'a300f646-52cd-4d46-bbed-9cbc948d8aae'.
+[2021-02-19 23:52:45.178273] Team member: ('Alayoub', 'Mohammad', '5275160')
+[2021-02-19 23:52:45.178283] Team member: ('Grabiec', 'Marco', '5273214')
+[2021-02-19 23:52:45.196599] Preparing the sandbox
+[2021-02-19 23:52:46.075268] Unpacking submission in sandbox
+[2021-02-19 23:52:46.515719] Building the test subject
+[2021-02-19 23:52:46.515847] Identified the Java variant.
+[2021-02-19 23:52:46.656034] Building Java solution with maven.
+[2021-02-19 23:52:57.616935] Maven log:
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< de.thm.mni.compilerbau.spl-reference:spl >--------------
+[INFO] Building spl 0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jflex-maven-plugin:1.7.0:generate (default) @ spl ---
+[INFO]   generated /home/solution/java/target/generated-sources/jflex/de/thm/mni/compilerbau/phases/_01_scanner/Scanner.java
+[INFO] 
+[INFO] --- cup-maven-plugin:11b-20160615:generate (default) @ spl ---
+Warning : *** Shift/Reduce conflict found in state #83
+  between if_stm ::= IF LPAREN exp RPAREN stm (*) 
+  and     if_stm ::= IF LPAREN exp RPAREN stm (*) ELSE stm 
+  under symbol ELSE
+  Resolved in favor of shifting.
+
+[INFO]   generated /home/solution/java/target/generated-sources/cup/de/thm/mni/compilerbau/phases/_02_03_parser/Parser.java
+[INFO]   generated /home/solution/java/target/generated-sources/cup/de/thm/mni/compilerbau/phases/_02_03_parser/Sym.java
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/solution/java/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ spl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 55 source files to /home/solution/java/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/solution/java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ spl ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ spl ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ spl ---
+[INFO] Building jar: /home/solution/java/target/spl.jar
+[INFO] 
+[INFO] --- maven-shade-plugin:3.1.0:shade (default) @ spl ---
+[INFO] Including com.github.vbmacher:java-cup-runtime:jar:11b-20160615 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /home/solution/java/target/spl.jar with /home/solution/java/target/spl-0.1-shaded.jar
+[INFO] Dependency-reduced POM written at: /home/solution/java/dependency-reduced-pom.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.829 s
+[INFO] Finished at: 2021-02-19T22:52:57Z
+[INFO] ------------------------------------------------------------------------
+[2021-02-19 23:52:57.753113] Beginning evaluation.
+[2021-02-19 23:52:57.753357] Evaluating 101_undefined_type.spl with the submitted solution.
+[2021-02-19 23:52:58.074576] Test subject results match (Compiler Failure).
+[2021-02-19 23:52:58.074602] Exit code matches the expected exit code (101).
+[2021-02-19 23:52:58.074628] Test passed.
+[2021-02-19 23:52:58.074636] Running Score: 1/1
+
+[2021-02-19 23:52:58.074653] Evaluating 102_not_a_type.spl with the submitted solution.
+[2021-02-19 23:52:58.389576] Test subject results match (Compiler Failure).
+[2021-02-19 23:52:58.389599] Exit code matches the expected exit code (102).
+[2021-02-19 23:52:58.389621] Test passed.
+[2021-02-19 23:52:58.389629] Running Score: 2/2
+
+[2021-02-19 23:52:58.389644] Evaluating 103_redeclaration_as_type.spl with the submitted solution.
+[2021-02-19 23:52:58.700576] Test subject results match (Compiler Failure).
+[2021-02-19 23:52:58.700599] Exit code matches the expected exit code (103).
+[2021-02-19 23:52:58.700625] Test passed.
+[2021-02-19 23:52:58.700635] Running Score: 3/3
+
+[2021-02-19 23:52:58.700649] Evaluating 104_must_be_reference_parameter.spl with the submitted solution.
+[2021-02-19 23:52:59.400640] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:52:59.400704] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/104_must_be_reference_parameter.spl.x /home/tools/lib/start.o /home/temp/104_must_be_reference_parameter.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:52:59.400732] Test not passed.
+[2021-02-19 23:52:59.400739] Running Score: 3/4
+
+[2021-02-19 23:52:59.400754] Evaluating 105_redeclaration_as_procedure.spl with the submitted solution.
+[2021-02-19 23:52:59.728362] Test subject results match (Compiler Failure).
+[2021-02-19 23:52:59.728388] Exit code matches the expected exit code (105).
+[2021-02-19 23:52:59.728411] Test passed.
+[2021-02-19 23:52:59.728419] Running Score: 4/5
+
+[2021-02-19 23:52:59.728434] Evaluating 106_redeclaration_as_parameter.spl with the submitted solution.
+[2021-02-19 23:53:00.036802] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:00.036826] Exit code matches the expected exit code (106).
+[2021-02-19 23:53:00.036850] Test passed.
+[2021-02-19 23:53:00.036859] Running Score: 5/6
+
+[2021-02-19 23:53:00.036874] Evaluating 107_redeclaration_as_variable.spl with the submitted solution.
+[2021-02-19 23:53:00.345275] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:00.345301] Exit code matches the expected exit code (107).
+[2021-02-19 23:53:00.345328] Test passed.
+[2021-02-19 23:53:00.345337] Running Score: 6/7
+
+[2021-02-19 23:53:00.345354] Evaluating 112_undefined_procedure.spl with the submitted solution.
+[2021-02-19 23:53:00.662006] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:00.662032] Exit code matches the expected exit code (112).
+[2021-02-19 23:53:00.662055] Test passed.
+[2021-02-19 23:53:00.662064] Running Score: 7/8
+
+[2021-02-19 23:53:00.662080] Evaluating 113_call_of_non_procedure.spl with the submitted solution.
+[2021-02-19 23:53:00.978062] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:00.978093] Exit code matches the expected exit code (113).
+[2021-02-19 23:53:00.978116] Test passed.
+[2021-02-19 23:53:00.978124] Running Score: 8/9
+
+[2021-02-19 23:53:00.978139] Evaluating 114_argument_type_mismatch.spl with the submitted solution.
+[2021-02-19 23:53:01.303453] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:01.303483] Exit code matches the expected exit code (114).
+[2021-02-19 23:53:01.303510] Test passed.
+[2021-02-19 23:53:01.303519] Running Score: 9/10
+
+[2021-02-19 23:53:01.303536] Evaluating 115_argument_must_be_variable.spl with the submitted solution.
+[2021-02-19 23:53:01.626902] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:01.626927] Exit code matches the expected exit code (115).
+[2021-02-19 23:53:01.626959] Test passed.
+[2021-02-19 23:53:01.626969] Running Score: 10/11
+
+[2021-02-19 23:53:01.626985] Evaluating 116_procedure_too_few_arguments.spl with the submitted solution.
+[2021-02-19 23:53:01.935451] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:01.935482] Exit code matches the expected exit code (116).
+[2021-02-19 23:53:01.935507] Test passed.
+[2021-02-19 23:53:01.935515] Running Score: 11/12
+
+[2021-02-19 23:53:01.935532] Evaluating 117_procedure_too_many_arguments.spl with the submitted solution.
+[2021-02-19 23:53:02.248540] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:02.248566] Exit code matches the expected exit code (117).
+[2021-02-19 23:53:02.248590] Test passed.
+[2021-02-19 23:53:02.248601] Running Score: 12/13
+
+[2021-02-19 23:53:02.248617] Evaluating 121_undefined_variable.spl with the submitted solution.
+[2021-02-19 23:53:02.564669] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:02.564694] Exit code matches the expected exit code (121).
+[2021-02-19 23:53:02.564718] Test passed.
+[2021-02-19 23:53:02.564726] Running Score: 13/14
+
+[2021-02-19 23:53:02.564743] Evaluating 122_not_a_variable.spl with the submitted solution.
+[2021-02-19 23:53:02.877148] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:02.877174] Exit code matches the expected exit code (122).
+[2021-02-19 23:53:02.877198] Test passed.
+[2021-02-19 23:53:02.877206] Running Score: 14/15
+
+[2021-02-19 23:53:02.877222] Evaluating 123_indexing_non_array.spl with the submitted solution.
+[2021-02-19 23:53:03.209492] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:03.209518] Exit code matches the expected exit code (123).
+[2021-02-19 23:53:03.209542] Test passed.
+[2021-02-19 23:53:03.209553] Running Score: 15/16
+
+[2021-02-19 23:53:03.209569] Evaluating 124_indexing_with_non_integer.spl with the submitted solution.
+[2021-02-19 23:53:03.522958] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:03.522986] Exit code matches the expected exit code (124).
+[2021-02-19 23:53:03.523011] Test passed.
+[2021-02-19 23:53:03.523020] Running Score: 16/17
+
+[2021-02-19 23:53:03.523037] Evaluating 126_main_not_a_procedure.spl with the submitted solution.
+[2021-02-19 23:53:03.828418] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:03.828442] Exit code matches the expected exit code (126).
+[2021-02-19 23:53:03.828468] Test passed.
+[2021-02-19 23:53:03.828477] Running Score: 17/18
+
+[2021-02-19 23:53:03.828493] Evaluating 127_main_must_not_have_parameters.spl with the submitted solution.
+[2021-02-19 23:53:04.166923] Test subject results match (Compiler Failure).
+[2021-02-19 23:53:04.166947] Exit code matches the expected exit code (127).
+[2021-02-19 23:53:04.166972] Test passed.
+[2021-02-19 23:53:04.166980] Running Score: 18/19
+
+[2021-02-19 23:53:04.166996] Evaluating acker.spl with the submitted solution.
+[2021-02-19 23:53:04.754375] Toolchain resulted in 'Assembler Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:04.754431] Output (stdout + stderr) of '/home/tools/as -o /home/temp/acker.spl.o /home/temp/acker.spl.s' (Limited to 50 lines/10000 characters):
+Error: label '__L12' multiply defined in line 75
+[2021-02-19 23:53:04.754462] Test not passed.
+[2021-02-19 23:53:04.754470] Running Score: 18/20
+
+[2021-02-19 23:53:04.754488] Evaluating bigtest.spl with the submitted solution.
+[2021-02-19 23:53:05.420976] Submission exited with exit code 1, which is not allowed. Allowed: [0, 99, 140, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]
+[2021-02-19 23:53:05.421029] Output (stdout + stderr) of 'java -jar /home/solution/java/target/spl.jar /home/tests/bigtest.spl /home/temp/bigtest.spl.s' (Limited to 50 lines/10000 characters):
+An error occurred: Index 16 out of bounds for length 16
+java.lang.ArrayIndexOutOfBoundsException: Index 16 out of bounds for length 16
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.getNextFreeRegister(CodeGeneratorVisitor.java:55)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:80)
+	at de.thm.mni.compilerbau.absyn.ArrayAccess.accept(ArrayAccess.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:221)
+	at de.thm.mni.compilerbau.absyn.VariableExpression.accept(VariableExpression.java:28)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:145)
+	at de.thm.mni.compilerbau.absyn.CallStatement.accept(CallStatement.java:35)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$1(CodeGeneratorVisitor.java:211)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:211)
+	at de.thm.mni.compilerbau.absyn.ProcedureDeclaration.accept(ProcedureDeclaration.java:48)
+	at de.thm.mni.compilerbau.phases._06_codegen.CodeGenerator.generateCode(CodeGenerator.java:52)
+	at de.thm.mni.compilerbau.Main.main(Main.java:157)
+[2021-02-19 23:53:05.421064] Test not passed.
+[2021-02-19 23:53:05.421071] Running Score: 18/21
+
+[2021-02-19 23:53:05.421088] Evaluating bits.spl with the submitted solution.
+[2021-02-19 23:53:06.162062] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:06.162118] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/bits.spl.x /home/tools/lib/start.o /home/temp/bits.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:06.162148] Test not passed.
+[2021-02-19 23:53:06.162156] Running Score: 18/22
+
+[2021-02-19 23:53:06.162174] Evaluating gcd.spl with the submitted solution.
+[2021-02-19 23:53:06.911116] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:06.911174] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/gcd.spl.x /home/tools/lib/start.o /home/temp/gcd.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    gcd
+Error: 2 undefined symbol(s)
+[2021-02-19 23:53:06.911202] Test not passed.
+[2021-02-19 23:53:06.911210] Running Score: 18/23
+
+[2021-02-19 23:53:06.911227] Evaluating inttest.spl with the submitted solution.
+[2021-02-19 23:53:07.615210] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:07.615272] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/inttest.spl.x /home/tools/lib/start.o /home/temp/inttest.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:07.615304] Test not passed.
+[2021-02-19 23:53:07.615312] Running Score: 18/24
+
+[2021-02-19 23:53:07.615328] Evaluating multiply.spl with the submitted solution.
+[2021-02-19 23:53:08.344599] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:08.344657] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/multiply.spl.x /home/tools/lib/start.o /home/temp/multiply.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:08.344686] Test not passed.
+[2021-02-19 23:53:08.344694] Running Score: 18/25
+
+[2021-02-19 23:53:08.344711] Evaluating partind1.spl with the submitted solution.
+[2021-02-19 23:53:09.103498] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:09.103567] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/partind1.spl.x /home/tools/lib/start.o /home/temp/partind1.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    p
+Error: 2 undefined symbol(s)
+[2021-02-19 23:53:09.103597] Test not passed.
+[2021-02-19 23:53:09.103605] Running Score: 18/26
+
+[2021-02-19 23:53:09.103622] Evaluating partind2.spl with the submitted solution.
+[2021-02-19 23:53:09.682208] Submission exited with exit code 1, which is not allowed. Allowed: [0, 99, 140, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]
+[2021-02-19 23:53:09.682275] Output (stdout + stderr) of 'java -jar /home/solution/java/target/spl.jar /home/tests/partind2.spl /home/temp/partind2.spl.s' (Limited to 50 lines/10000 characters):
+An error occurred: Index 16 out of bounds for length 16
+java.lang.ArrayIndexOutOfBoundsException: Index 16 out of bounds for length 16
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.getNextFreeRegister(CodeGeneratorVisitor.java:55)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:181)
+	at de.thm.mni.compilerbau.absyn.IntLiteral.accept(IntLiteral.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:115)
+	at de.thm.mni.compilerbau.absyn.BinaryExpression.accept(BinaryExpression.java:84)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:109)
+	at de.thm.mni.compilerbau.absyn.AssignStatement.accept(AssignStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:175)
+	at de.thm.mni.compilerbau.absyn.WhileStatement.accept(WhileStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:175)
+	at de.thm.mni.compilerbau.absyn.WhileStatement.accept(WhileStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:175)
+	at de.thm.mni.compilerbau.absyn.WhileStatement.accept(WhileStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$1(CodeGeneratorVisitor.java:211)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:211)
+	at de.thm.mni.compilerbau.absyn.ProcedureDeclaration.accept(ProcedureDeclaration.java:48)
+	at de.thm.mni.compilerbau.phases._06_codegen.CodeGenerator.generateCode(CodeGenerator.java:52)
+	at de.thm.mni.compilerbau.Main.main(Main.java:157)
+[2021-02-19 23:53:09.682310] Test not passed.
+[2021-02-19 23:53:09.682318] Running Score: 18/27
+
+[2021-02-19 23:53:09.682337] Evaluating swap.spl with the submitted solution.
+[2021-02-19 23:53:10.427651] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:10.427735] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/swap.spl.x /home/tools/lib/start.o /home/temp/swap.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    swap
+Error: 2 undefined symbol(s)
+[2021-02-19 23:53:10.427768] Test not passed.
+[2021-02-19 23:53:10.427777] Running Score: 18/28
+
+[2021-02-19 23:53:10.427799] Evaluating test1.spl with the submitted solution.
+[2021-02-19 23:53:11.119780] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:11.119841] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test1.spl.x /home/tools/lib/start.o /home/temp/test1.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:11.119867] Test not passed.
+[2021-02-19 23:53:11.119875] Running Score: 18/29
+
+[2021-02-19 23:53:11.119891] Evaluating test2.spl with the submitted solution.
+[2021-02-19 23:53:11.828410] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:11.828459] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test2.spl.x /home/tools/lib/start.o /home/temp/test2.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    summe
+Error: 2 undefined symbol(s)
+[2021-02-19 23:53:11.828480] Test not passed.
+[2021-02-19 23:53:11.828488] Running Score: 18/30
+
+[2021-02-19 23:53:11.828504] Evaluating test3.spl with the submitted solution.
+[2021-02-19 23:53:12.436791] Submission exited with exit code 1, which is not allowed. Allowed: [0, 99, 140, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]
+[2021-02-19 23:53:12.436851] Output (stdout + stderr) of 'java -jar /home/solution/java/target/spl.jar /home/tests/test3.spl /home/temp/test3.spl.s' (Limited to 50 lines/10000 characters):
+An error occurred: Index 16 out of bounds for length 16
+java.lang.ArrayIndexOutOfBoundsException: Index 16 out of bounds for length 16
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.getNextFreeRegister(CodeGeneratorVisitor.java:55)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:181)
+	at de.thm.mni.compilerbau.absyn.IntLiteral.accept(IntLiteral.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:115)
+	at de.thm.mni.compilerbau.absyn.BinaryExpression.accept(BinaryExpression.java:84)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:109)
+	at de.thm.mni.compilerbau.absyn.AssignStatement.accept(AssignStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$1(CodeGeneratorVisitor.java:211)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:211)
+	at de.thm.mni.compilerbau.absyn.ProcedureDeclaration.accept(ProcedureDeclaration.java:48)
+	at de.thm.mni.compilerbau.phases._06_codegen.CodeGenerator.generateCode(CodeGenerator.java:52)
+	at de.thm.mni.compilerbau.Main.main(Main.java:157)
+[2021-02-19 23:53:12.436892] Test not passed.
+[2021-02-19 23:53:12.436900] Running Score: 18/31
+
+[2021-02-19 23:53:12.436917] Evaluating test4.spl with the submitted solution.
+[2021-02-19 23:53:13.184800] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:13.184860] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test4.spl.x /home/tools/lib/start.o /home/temp/test4.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+    fak1
+    fak2
+Error: 3 undefined symbol(s)
+[2021-02-19 23:53:13.184889] Test not passed.
+[2021-02-19 23:53:13.184897] Running Score: 18/32
+
+[2021-02-19 23:53:13.184917] Evaluating test5.spl with the submitted solution.
+[2021-02-19 23:53:13.919412] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:13.919492] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test5.spl.x /home/tools/lib/start.o /home/temp/test5.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:13.919523] Test not passed.
+[2021-02-19 23:53:13.919531] Running Score: 18/33
+
+[2021-02-19 23:53:13.919548] Evaluating test7.spl with the submitted solution.
+[2021-02-19 23:53:14.612582] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:14.612643] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test7.spl.x /home/tools/lib/start.o /home/temp/test7.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:14.612676] Test not passed.
+[2021-02-19 23:53:14.612684] Running Score: 18/34
+
+[2021-02-19 23:53:14.612700] Evaluating test8.spl with the submitted solution.
+[2021-02-19 23:53:15.328762] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:15.328822] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test8.spl.x /home/tools/lib/start.o /home/temp/test8.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:15.328849] Test not passed.
+[2021-02-19 23:53:15.328857] Running Score: 18/35
+
+[2021-02-19 23:53:15.328875] Evaluating test9.spl with the submitted solution.
+[2021-02-19 23:53:16.026535] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:16.026593] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/test9.spl.x /home/tools/lib/start.o /home/temp/test9.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:16.026622] Test not passed.
+[2021-02-19 23:53:16.026629] Running Score: 18/36
+
+[2021-02-19 23:53:16.026647] Evaluating threedim.spl with the submitted solution.
+[2021-02-19 23:53:16.560251] Submission exited with exit code 1, which is not allowed. Allowed: [0, 99, 140, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]
+[2021-02-19 23:53:16.560320] Output (stdout + stderr) of 'java -jar /home/solution/java/target/spl.jar /home/tests/threedim.spl /home/temp/threedim.spl.s' (Limited to 50 lines/10000 characters):
+An error occurred: Index 16 out of bounds for length 16
+java.lang.ArrayIndexOutOfBoundsException: Index 16 out of bounds for length 16
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.getNextFreeRegister(CodeGeneratorVisitor.java:55)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:80)
+	at de.thm.mni.compilerbau.absyn.ArrayAccess.accept(ArrayAccess.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:78)
+	at de.thm.mni.compilerbau.absyn.ArrayAccess.accept(ArrayAccess.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:108)
+	at de.thm.mni.compilerbau.absyn.AssignStatement.accept(AssignStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:164)
+	at de.thm.mni.compilerbau.absyn.IfStatement.accept(IfStatement.java:32)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:175)
+	at de.thm.mni.compilerbau.absyn.WhileStatement.accept(WhileStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:175)
+	at de.thm.mni.compilerbau.absyn.WhileStatement.accept(WhileStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$0(CodeGeneratorVisitor.java:154)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:154)
+	at de.thm.mni.compilerbau.absyn.CompoundStatement.accept(CompoundStatement.java:30)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:175)
+	at de.thm.mni.compilerbau.absyn.WhileStatement.accept(WhileStatement.java:29)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.lambda$visit$1(CodeGeneratorVisitor.java:211)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at de.thm.mni.compilerbau.absyn.visitor.CodeGeneratorVisitor.visit(CodeGeneratorVisitor.java:211)
+	at de.thm.mni.compilerbau.absyn.ProcedureDeclaration.accept(ProcedureDeclaration.java:48)
+	at de.thm.mni.compilerbau.phases._06_codegen.CodeGenerator.generateCode(CodeGenerator.java:52)
+	at de.thm.mni.compilerbau.Main.main(Main.java:157)
+[2021-02-19 23:53:16.560353] Test not passed.
+[2021-02-19 23:53:16.560361] Running Score: 18/37
+
+[2021-02-19 23:53:16.560379] Evaluating twodim.spl with the submitted solution.
+[2021-02-19 23:53:17.286877] Toolchain resulted in 'Linker Failure', which is not supposed to happen for working solutions. The associated log is listed below.
+[2021-02-19 23:53:17.286947] Output (stdout + stderr) of '/home/tools/ld -s /home/tools/lib/stdalone.lnk -o /home/temp/twodim.spl.x /home/tools/lib/start.o /home/temp/twodim.spl.o -L/home/tools/lib -lsplrts' (Limited to 50 lines/10000 characters):
+The following symbols are undefined:
+    main
+Error: 1 undefined symbol(s)
+[2021-02-19 23:53:17.286974] Test not passed.
+[2021-02-19 23:53:17.286982] Running Score: 18/38
+
+[2021-02-19 23:53:17.287075] Final score: 18/38 (47%). 
+[2021-02-19 23:53:17.287101] 80% are needed to pass.
+[2021-02-19 23:53:17.482745] You have NOT PASSED this assignment.
+[2021-02-19 23:53:17.482834] You can try again. Deadline: 22.02.2021 23:59
+
